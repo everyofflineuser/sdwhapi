@@ -7,7 +7,20 @@ public class TestAPI : MonoBehaviour
 
     private void Awake()
     {
-        api = FindObjectOfType<DiscordWebhookAPI>().GetComponent<DiscordWebhookAPI>();
+        // Перебираем все объекты с типом DiscordWebhookAPI
+        foreach (var obj in FindObjectsOfType<DiscordWebhookAPI>())
+        {
+            // Проверяем, содержит ли объект необходимую переменную ArchorName с нужным значением
+            if (obj.ArchorName == "ArchorName")
+            {
+                // Делаем что-то со найденным объектом
+                api = obj;
+            }
+        }
+        if (api == null)
+        {
+            Debug.Log("Объект с нужным Якорем не найден!");
+        }
     }
 
     private void Start()
