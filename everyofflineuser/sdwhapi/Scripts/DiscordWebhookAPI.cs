@@ -14,7 +14,7 @@ public class DiscordWebhookAPI : MonoBehaviour
     private string WebHookID = "ID";
     [SerializeField]
     private string WebHookToken = "TOKEN";
-    public string verAPI { get; private set; } = "1.2";
+    public string verAPI { get; private set; } = "1.8";
  
 
     string url;
