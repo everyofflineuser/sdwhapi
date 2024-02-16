@@ -4,11 +4,15 @@ using System.Net;
 using Newtonsoft.Json;
 using System.IO;
 
+// By NeAleks AKA everyofflineuser, 2024, sdwhapidocs.neserver.space.
+
 public class DiscordWebhookAPI : MonoBehaviour
 {
+    [SerializeField]
     private string WebHookID = "ID";
+    [SerializeField]
     private string WebHookToken = "TOKEN";
-    public string verAPI { get; private set; } = "1.1";
+    public string verAPI { get; private set; } = "1.2";
  
 
     string url;
