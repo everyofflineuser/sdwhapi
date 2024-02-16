@@ -9,6 +9,8 @@ using System.IO;
 public class DiscordWebhookAPI : MonoBehaviour
 {
     [SerializeField]
+    public string ArchorName = "ArchorName";
+    [SerializeField]
     private string WebHookID = "ID";
     [SerializeField]
     private string WebHookToken = "TOKEN";
@@ -19,6 +21,7 @@ public class DiscordWebhookAPI : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(this);
         url = $"https://discord.com/api/webhooks/{WebHookID}/{WebHookToken}";
     }
 
@@ -105,6 +108,10 @@ public class DiscordWebhookAPI : MonoBehaviour
         if (debug) Debug.Log(data + "\n" + ((HttpWebResponse)webResponse).StatusDescription);
     }
 
+    public void Destroy()
+    {
+        Destroy(this);
+    }
 }
 
 public class ExecuteWebhookObject
