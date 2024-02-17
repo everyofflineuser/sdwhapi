@@ -17,7 +17,7 @@ public class DiscordWebhookAPI : MonoBehaviour
 
     public string verAPI { get; private set; } = "1.9";
 
-    public string lastmsg { get; private set; };
+    public string lastmsg { get; private set; }
 
     private string url;
 
