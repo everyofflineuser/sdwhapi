@@ -14,10 +14,12 @@ public class DiscordWebhookAPI : MonoBehaviour
     private string WebHookID = "ID";
     [SerializeField]
     private string WebHookToken = "TOKEN";
-    public string verAPI { get; private set; } = "1.9";
- 
 
-    string url;
+    public string verAPI { get; private set; } = "1.9";
+
+    public string lastmsg { get; private set; };
+
+    private string url;
 
     private void Awake()
     {
@@ -54,6 +56,7 @@ public class DiscordWebhookAPI : MonoBehaviour
         using var reader = new StreamReader(respStream);
         string data = reader.ReadToEnd();
         if (debug) Debug.Log(data);
+        if (getmsgdata) lastmsg = data;
     }
 
     public string GetMessage(string msgid)
