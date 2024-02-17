@@ -14,7 +14,7 @@ public class DiscordWebhookAPI : MonoBehaviour
     private string WebHookID = "ID";
     [SerializeField]
     private string WebHookToken = "TOKEN";
-    public string verAPI { get; private set; } = "1.2";
+    public string verAPI { get; private set; } = "1.9";
  
 
     string url;
@@ -25,9 +25,10 @@ public class DiscordWebhookAPI : MonoBehaviour
         url = $"https://discord.com/api/webhooks/{WebHookID}/{WebHookToken}";
     }
 
-    public void SendMessage(bool debug, string content, string username = null, string avatar_url = null, bool tts = false, bool )
+    public void SendMessage(bool debug, string content, string username = null, string avatar_url = null, bool tts = false, bool getmsgdata = false)
     {
-  g= faletmsgdata       var request = WebRequest.Create(url);
+        if (getmsgdata) var request = WebRequest.Create(url + "?wait=true");
+        else var request = WebRequest.Create(url);
         request.Method = "POST";
 
         ExecuteWebhookObject execute = new ExecuteWebhookObject();
