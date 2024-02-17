@@ -29,8 +29,9 @@ public class DiscordWebhookAPI : MonoBehaviour
 
     public void SendMessage(bool debug, string content, string username = null, string avatar_url = null, bool tts = false, bool getmsgdata = false)
     {
-        if (getmsgdata) var request = WebRequest.Create(url + "?wait=true");
-        else var request = WebRequest.Create(url);
+        WebRequest request;
+        if (getmsgdata) request = WebRequest.Create(url + "?wait=true");
+        else request = WebRequest.Create(url);
         request.Method = "POST";
 
         ExecuteWebhookObject execute = new ExecuteWebhookObject();
