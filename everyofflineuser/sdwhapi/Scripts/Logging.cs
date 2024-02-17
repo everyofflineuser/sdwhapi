@@ -5,9 +5,9 @@ public class Logging : MonoBehaviour
 {
     private DiscordWebhookAPI api;
 
-    private void Log(DiscordWebhookAPI webhookAPI, string log)
+    private void Log(DiscordWebhookAPI webhookAPI, string log, bool getmsgdata = false)
     {
-        webhookAPI.SendMessage(false, $"[Log] {DateTime.Now.ToString("h:mm:ss tt")} {log}", null, "https://cdn.discordapp.com/avatars/1026084150895202385/de808d42737bc91d34812c06d0e887ac.png", false);
+        webhookAPI.SendMessage(false, $"[Log] {DateTime.Now.ToString("h:mm:ss tt")} {log}", null, "https://cdn.discordapp.com/avatars/1026084150895202385/de808d42737bc91d34812c06d0e887ac.png", false, getmsgdata);
     }
 
     private void Awake()
