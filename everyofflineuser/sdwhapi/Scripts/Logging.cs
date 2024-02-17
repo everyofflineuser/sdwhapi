@@ -1,4 +1,5 @@
 using System;
+using Newtonsoft.Json;
 using UnityEngine;
 
 public class Logging : MonoBehaviour
@@ -8,6 +9,9 @@ public class Logging : MonoBehaviour
     private void Log(DiscordWebhookAPI webhookAPI, string log, bool getmsgdata = false)
     {
         webhookAPI.SendMessage(false, $"[Log] {DateTime.Now.ToString("h:mm:ss tt")} {log}", null, "https://cdn.discordapp.com/avatars/1026084150895202385/de808d42737bc91d34812c06d0e887ac.png", false, getmsgdata);
+        if (getmsgdata) {
+            // TODO: add in temp variable
+        }
     }
 
     private void Awake()
