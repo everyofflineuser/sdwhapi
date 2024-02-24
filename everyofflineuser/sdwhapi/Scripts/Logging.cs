@@ -49,7 +49,7 @@ public class Logging : MonoBehaviour
 
     private void HandleLog(string logString, string stackTrace, LogType type)
     {
-        if (type == LogType.Error)
+        if (type == LogType.Exception || type == LogType.Error)
         {
             ErrorLog(api, logString);
         }
